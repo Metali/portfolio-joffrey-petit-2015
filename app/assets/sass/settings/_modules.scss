@@ -1,0 +1,15 @@
+.loader {
+  position:absolute;
+  left:0;
+  right:0;
+  margin:auto;
+  height:75px;
+  width:75px;
+  bottom:-50px;
+  span {
+    font-size:30px;
+    color:$yellow1;
+    animation: loader 1s infinite;
+  }
+
+}

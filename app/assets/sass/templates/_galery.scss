@@ -1,0 +1,15 @@
+#galery {
+  display:block;
+  margin:0 auto;
+  margin-bottom:100px;
+  .picture {
+    padding:0;
+    margin:0;
+    display:inline-block;
+    margin-bottom:20px;
+    img {
+      opacity:0;
+      max-width:300px;
+    }
+  }
+}
