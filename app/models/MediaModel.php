@@ -14,7 +14,7 @@ class MediaModel {
         foreach ( $query_images->posts as $image) {
 
             $images[] = array(
-                "preview" => wp_get_attachment_image_src( $image->ID,"large"),
+                "preview" => wp_get_attachment_image_src( $image->ID,"medium"),
 
             );
         }

@@ -1289,7 +1289,7 @@ body {
     margin-bottom: 20px; }
     #galery .picture img {
       opacity: 0;
-      max-width: 300px; }
+      width: 300px; }
 
 /* Partials templates */
 #nav {

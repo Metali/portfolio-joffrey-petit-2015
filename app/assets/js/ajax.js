@@ -68,7 +68,7 @@ $(document).ready(function() {
     if($("#galery").length > 0) {
         $(window).attr("ajax",true);
 
-        JP.ajax.isWorthLoad();
+        // JP.ajax.isWorthLoad();
         $(window).scroll(function(){
             JP.ajax.infiniteScroll();
         });
