@@ -2,11 +2,12 @@
 function mediaModule($media)
 {
     $view = "";
-
+   
     foreach ($media as $picture) {
+    	 var_dump($picture);die;
         $view .= '
         <a href="' . $picture["preview"][0] . '" class="picture">
-            <img src="' . $picture["preview"][0] . '" />
+            <img width="' . $picture["preview"][2] . '" height="' . $picture["preview"][1] . '" src="' . $picture["preview"][0] . '" />
         </a>
         ';
     }
