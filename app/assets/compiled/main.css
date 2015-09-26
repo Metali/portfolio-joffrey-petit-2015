@@ -1163,15 +1163,16 @@ button.square-button {
   border: none;
   outline: none;
   cursor: pointer;
-  height: 80px;
-  width: 80px;
+  text-transform: uppercase;
   padding: 0px;
   margin: 0px;
-  font-size: 20px;
+  font-size: 15px;
   position: relative;
   display: inline-block;
   color: white;
   background: rgba(27, 27, 27, 0.6); }
+  button.square-button span[class^="icon-"] {
+    font-size: 20px; }
   button.square-button:hover {
     background: #e5b920; }
 
@@ -1235,6 +1236,10 @@ body {
     bottom: 0;
     top: 0; }
 
+#home button.square-button {
+  height: 80px;
+  width: 80px; }
+
 #home .home-navigation {
   display: block;
   width: 165px;
@@ -1289,7 +1294,37 @@ body {
     margin-bottom: 20px; }
     #galery .picture img {
       opacity: 0;
-      width: 300px; }
+      width: 200px; }
+  #galery p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 15px; }
+
+#load-more {
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  margin-bottom: 100px; }
+
+#box-preview {
+  position: fixed;
+  z-index: 600;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: rgba(27, 27, 27, 0.8);
+  text-align: center;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 100px 0; }
+  #box-preview img {
+    max-width: 90%;
+    max-height: calc(100% - 200px); }
 
 /* Partials templates */
 #nav {

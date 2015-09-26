@@ -1,12 +1,14 @@
 var JP = JP || {};
 
 JP.galery = {
-    imageSize: 300,
+    imageSize: 200,
     gutter: 20,
+    boxpreview: "",
 
     init: function () {
         JP.galery.setWidth();
         JP.galery.imageLoad();
+        this.boxpreview = "";
     },
     setWidth: function () {
         var capacity = $(window).width() / (JP.galery.imageSize + JP.galery.gutter);
@@ -36,6 +38,17 @@ JP.galery = {
             });
 
 
+    },
+    boxPreview: function($this) {
+        var image = $this.attr("href");
+        console.log(image);
+
+        if($("#box-preview").length > 0) {
+            $("#box-preview").remove();
+        }
+
+        this.boxpreview = "<div id='box-preview'><img src='" + image + "' /></div>";
+        $("body").prepend(this.boxpreview);
     }
 
 };
@@ -47,5 +60,10 @@ $(document).ready(function () {
         $(window).on("resize", function () {
             JP.galery.setWidth();
         });
+
+        $("body").on("click",".picture",function(e) {
+            e.preventDefault();
+            JP.galery.boxPreview($(this));
+        })
     }
 });

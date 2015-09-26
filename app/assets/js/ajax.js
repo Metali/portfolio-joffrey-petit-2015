@@ -6,7 +6,7 @@ JP.ajax = {
         }
     },
     infiniteScroll: function() {
-        if(this.getScroll() >= 70 && $(window).attr("ajax") == true) {
+        if(this.getScroll() >= 70 && $(window).attr("ajax") == true && $(window).attr("infinitescroll") == true) {
             JP.ajax.getLastMedia();
         }
     },
@@ -25,6 +25,7 @@ JP.ajax = {
         var conf = JSON.parse($("#galery").attr('data-conf'));
 
         $(window).attr("ajax",false);
+        $(window).attr("infinitescroll",false);
 
         JP.loader.show($("#galery"));
 
@@ -54,6 +55,8 @@ JP.ajax = {
                 } else {
                     JP.loader.hide();
                     $(window).attr("ajax",false);
+                    $("#load-more").hide();
+                    $("#galery").append("<p>Il n'y plus de photos à charger</p>")
                 }
 
                 if(callback) {
@@ -66,11 +69,14 @@ JP.ajax = {
 
 $(document).ready(function() {
     if($("#galery").length > 0) {
-        $(window).attr("ajax",true);
 
-        // JP.ajax.isWorthLoad();
-        $(window).scroll(function(){
-            JP.ajax.infiniteScroll();
+        $(window).attr("ajax",true);
+        $("body").on("click","#box-preview", function() {
+            $("#box-preview").remove();
+        });
+
+        $("body").on("click","#load-more",function() {
+              JP.ajax.getLastMedia();
         });
 
     }

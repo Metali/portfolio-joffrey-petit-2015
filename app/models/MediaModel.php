@@ -15,6 +15,7 @@ class MediaModel {
 
             $images[] = array(
                 "preview" => wp_get_attachment_image_src( $image->ID,"medium"),
+                "link" => wp_get_attachment_image_src( $image->ID,"large"),
 
             );
         }

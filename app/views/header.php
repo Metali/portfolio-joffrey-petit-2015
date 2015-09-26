@@ -20,4 +20,5 @@
     </script>
 </head>
 <body>
+
 <?php include(THEME_PATH . "views/partials/nav.php"); ?>
