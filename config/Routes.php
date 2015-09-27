@@ -22,6 +22,7 @@ Class Routes
             if (count($controller) > 1) {
                 call_user_func($controller);
             }
+
         }
     }
 

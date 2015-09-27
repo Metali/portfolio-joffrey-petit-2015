@@ -21,4 +21,16 @@ class MediaModel {
         }
         return $images;
     }
+
+    public static function getByPostSlug($slug)
+    {
+        $args = array(
+            'name'        => $slug,
+            'post_type'   => 'post',
+            'post_status' => 'publish',
+            'numberposts' => -1
+        );
+        $post = get_posts($args);
+        return get_attached_media('image',$post[0]->ID);
+    }
 }

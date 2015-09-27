@@ -5,7 +5,7 @@
         <button class="next square-button"><?= ico('arrow-right'); ?></button>
     </div>
     <div class="home-slider" data-img="1">
-        <img src="./public/images/background-home-1.jpg" />
+        <img src="/wp-content/themes/joffreypetit-2015/app/assets/images/background-home-1.jpg" />
     </div>
 </section>
 <?php include(THEME_PATH . "views/footer.php"); ?>

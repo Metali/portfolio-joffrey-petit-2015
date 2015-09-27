@@ -20,5 +20,8 @@
     </script>
 </head>
 <body>
-
+<div id="page-loader">
+    <img src="/wp-content/themes/joffreypetit-2015/app/assets/images/logo.png" />
+</div>
+<div id="main">
 <?php include(THEME_PATH . "views/partials/nav.php"); ?>

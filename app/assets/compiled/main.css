@@ -1179,7 +1179,7 @@ button.square-button {
 section {
   margin: 0px;
   padding: 0px;
-  height: 100vh;
+  min-height: calc(100vh - 50px);
   width: 100%;
   display: block;
   position: relative; }
@@ -1196,6 +1196,27 @@ section {
     font-size: 30px;
     color: #e5b920;
     animation: loader 1s infinite; }
+
+#page-loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000; }
+  #page-loader img {
+    max-width: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto; }
+
+#main {
+  opacity: 0; }
 
 /* Templates */
 body {
@@ -1293,7 +1314,8 @@ body {
     display: inline-block;
     margin-bottom: 20px; }
     #galery .picture img {
-      opacity: 0; }
+      opacity: 0;
+      max-width: 300px; }
   #galery p {
     position: absolute;
     bottom: 0;
@@ -1313,7 +1335,6 @@ body {
   z-index: 600;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
   background: rgba(27, 27, 27, 0.8);
   text-align: center;
   top: 0;
