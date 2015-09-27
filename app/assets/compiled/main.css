@@ -1191,7 +1191,7 @@ section {
   margin: auto;
   height: 75px;
   width: 75px;
-  bottom: -50px; }
+  bottom: -100px; }
   .loader span {
     font-size: 30px;
     color: #e5b920;
@@ -1293,8 +1293,7 @@ body {
     display: inline-block;
     margin-bottom: 20px; }
     #galery .picture img {
-      opacity: 0;
-      width: 200px; }
+      opacity: 0; }
   #galery p {
     position: absolute;
     bottom: 0;
@@ -1304,7 +1303,7 @@ body {
     font-size: 15px; }
 
 #load-more {
-  padding: 10px;
+  padding: 20px;
   margin: 10px auto;
   display: block;
   margin-bottom: 100px; }

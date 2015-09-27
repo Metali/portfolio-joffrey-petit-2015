@@ -1,7 +1,7 @@
 var JP = JP || {};
 
 JP.galery = {
-    imageSize: 200,
+    imageSize: 300,
     gutter: 20,
     boxpreview: "",
 
