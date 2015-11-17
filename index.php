@@ -1,5 +1,4 @@
 <?php
-
 define("THEME_PATH", __DIR__ . "/app/");
 
 include("config/Import.php");
