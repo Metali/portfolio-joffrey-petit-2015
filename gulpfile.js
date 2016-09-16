@@ -36,7 +36,7 @@ gulp.task('compile:sass', function () {
         .pipe(sass({
             sourceComments: false,
             includePaths: othersSassFiles,
-            outputStyle: 'compressed',
+            //outputStyle: 'compressed',
             errLogToConsole: true
         }))
         .pipe(gulp.dest(compiledDir));

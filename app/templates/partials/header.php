@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
     <title><?= get_bloginfo('name'); ?></title>
     <meta name="description" content="<?= get_bloginfo('description'); ?>">
-    <?php do_action('wp_head'); ?>
+    <?php //do_action('wp_head'); ?>
     <script>app={}</script>
 </head>
 <?php
