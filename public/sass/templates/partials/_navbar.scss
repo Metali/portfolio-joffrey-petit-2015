@@ -1,0 +1,29 @@
+#nav {
+  height:60px;
+  width:260px;
+  background:pink;
+  display:block;
+  position:absolute;
+}
+#nav-menu {
+  height:60px;
+  width:60px;
+  display:block;
+  float:left;
+}
+
+#logo {
+  float:left;
+  color:$color-title;
+  background:red;
+  margin-left:20px;
+  p {
+    font-size:30px;
+    line-height:35px;
+  }
+  span {
+    font-size:18px;
+    line-height:23px;
+    font-style: italic;
+  }
+}

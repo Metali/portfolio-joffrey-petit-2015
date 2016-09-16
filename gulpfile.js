@@ -11,14 +11,12 @@ var uglify = require('gulp-uglify');
 // Local variables
 // ===================
 
-jsDir = './app/assets/js/';
-sassDir = './app/assets/sass/';
-compiledDir = './app/assets/compiled/';
+jsDir = './public/js/';
+sassDir = './public/sass/';
+compiledDir = './public/compressed/';
 
 jsFiles = [
-    'bower_components/jquery/dist/jquery.min.js',
     'bower_components/masonery/dist/masonry.pkgd.min.js',
-    'bower_components/imagesloaded/imagesloaded.js',
     jsDir + '**/*.js'
 ];
 
@@ -38,7 +36,7 @@ gulp.task('compile:sass', function () {
         .pipe(sass({
             sourceComments: false,
             includePaths: othersSassFiles,
-            //outputStyle: 'compressed',
+            outputStyle: 'compressed',
             errLogToConsole: true
         }))
         .pipe(gulp.dest(compiledDir));
@@ -76,4 +74,10 @@ gulp.task('watch:sass', function () {
 gulp.task('watch:js', function () {
     gulp.start('compile:js');
     gulp.watch(jsDir + "**/*.js", ['compile:js'])
+})
+
+gulp.task('watch:assets', function() {
+	gulp.start('default');
+	gulp.watch(sassDir + "**/*.scss", ['compile:sass'])
+	gulp.watch(jsDir + "**/*.js", ['compile:js'])
 });

@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    min-width: 100%;
+    min-height:100vh;
+    height:auto;
+    margin:0;
+    padding:0;
+    position:relative;
+    display:block;
+    z-index:100;
+}
+
+.container-center {
+    max-width:1000px;
+    margin:0 auto;
+    height:100vh;
+    padding:0;
+    display:block;
+    position:relative;
+    z-index:10;
+}
+
+%container-middle-absolute {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    display:block;
+}
+
+.background-full {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    display:block;
+    position:absolute;
+    z-index:1;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+}

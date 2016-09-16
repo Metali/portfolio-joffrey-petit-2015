@@ -1,0 +1,28 @@
+$font-directory:'/wp-content/themes/joffrey-2016/public/fonts/';
+$arapey-directory: $font-directory + 'arapey/';
+$helvetica: $font-directory + 'helvetica/';
+$primaryFont: 'arapeyregular', Georgia,helvetica, arial, sans-serif;
+
+@font-face {
+    font-family: 'arapeyitalic';
+    src: url($arapey-directory + 'arapey-italic-webfont.woff2') format('woff2'),
+         url($arapey-directory + 'arapey-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'arapeyregular';
+    src: url($arapey-directory + 'arapey-regular-webfont.woff2') format('woff2'),
+         url($arapey-directory + 'arapey-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Helvetica LT Std';
+    src: url($helvetica + 'HelveticaLTStd-Light.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
