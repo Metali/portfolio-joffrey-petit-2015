@@ -25,3 +25,7 @@ function adjustColor($hex, $steps) {
     }
     return $return;
 }
+
+function customID($project) {
+    return $project['slug'] . '-' . $project['id'];
+}

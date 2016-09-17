@@ -19,6 +19,9 @@ function hasClass($el,name) {
     return false;
 }
 
+function divExists(id) {
+    return document.getElementById(id);
+}
 app.responsive = {
     isDesktop: function() {
         return window.innerWidth >= 1001;

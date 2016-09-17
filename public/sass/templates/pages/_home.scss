@@ -1,0 +1,109 @@
+$paddingOffset: 100px;
+#home {
+  overflow:hidden;
+}
+#last-images-preview {
+  height:80vh;
+  position:absolute;
+  left:125px;
+  right:125px;
+  top:0;
+  bottom:0;
+  display:block;
+  width:calc(100% - 250px);
+  margin:auto;
+  z-index:100;
+
+  .home-project {
+    width:25%;
+    height:calc(100% - 100px);
+    display:block;
+    z-index:100;
+    float:left;
+    left:0;
+    position:absolute;
+    margin:0 0 $paddingOffset 0;
+    background: $background;
+    @include transition-css(all);
+
+    &:nth-of-type(2) {
+      left:25%;
+      margin:$paddingOffset 0 0 0;
+    }
+    &:nth-of-type(3) {
+      left:50%;
+    }
+    &:nth-of-type(4) {
+      left:75%;
+      margin:$paddingOffset 0 0 0;
+    }
+    h2 {
+      display:inline-block;
+      color:$color-title;
+      position:absolute;
+      z-index:150;
+      left:-15%;
+      bottom:10%;
+      font-size:35px;
+      line-height:40px;
+      font-style:italic;
+      font-weight:normal;
+      opacity:0;
+      width: 100vw;
+      @include transition-css(all);
+      &:before {
+        @include transition-css(all,0.3s,0.3s);
+        height:1px;
+        width:0;
+        background:$color-title;
+        position:absolute;
+        bottom:-3px;
+        content:"";
+        left:20px;
+      }
+    }
+
+    .home-project_image {
+      height:100%;
+      width:100%;
+      overflow:hidden;
+      margin:0;
+      padding:0;
+      position:relative;
+      background-color:$background !important;
+      background-size:cover !important;
+      filter: grayscale(100%);
+      opacity:0.4;
+      @include transition-css(all);
+    }
+
+    &:hover {
+      width:35%;
+      z-index:110;
+      h2 {
+        opacity:1;
+        left:-10%;
+        @include transition-css(all,0.3s,0.2s);
+      }
+      h2:before {
+        width:30px;
+      }
+      &:nth-of-type(1) {
+        left:-5%;
+      }
+      &:nth-of-type(2) {
+        left:20%;
+      }
+      &:nth-of-type(3) {
+        left:45%;
+      }
+      &:nth-of-type(4) {
+        left:70%;
+      }
+      .home-project_image {
+        filter:grayscale(0%);
+        opacity:0.8;
+      }
+    }
+  }
+}

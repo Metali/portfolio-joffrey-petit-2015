@@ -3,9 +3,9 @@
         <div></div>
         <div></div>
     </button>
-    <a href="#" id="logo">
-        <p>Joffrey Petit</p>
+    <a href="/" id="logo">
+        <h1><p>Joffrey Petit</p></h1>
         <span>Maquilleur professionnel</span>
     </a>
 </nav>
-<div id="page-content">
+<div id="page-content" class="container">

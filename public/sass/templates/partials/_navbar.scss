@@ -5,6 +5,7 @@
   position:absolute;
   top:125px;
   left:125px;
+  z-index:500;
 }
 #nav-menu {
   height:30px;
@@ -41,6 +42,7 @@
   p {
     font-size:30px;
     line-height:25px;
+    font-weight:normal;
   }
   span {
     font-size:18px;

@@ -1,0 +1,15 @@
+.title-border {
+    &:before {
+         @include transition-css(all);
+         height:1px;
+         width:0;
+         background:$color-title;
+         position:absolute;
+         bottom:-3px;
+         content:"";
+         left:20px;
+     }
+    &.active:before {
+        width:30px;
+    }
+}

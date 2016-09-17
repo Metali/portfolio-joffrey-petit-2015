@@ -1,19 +1,28 @@
 <?php
-
 class PageController
 {
     public function __construct() {}
 
     static public function home()
     {
-        /*
-        $projects = \Project::getAll();
+        $projects = \ProjectModel::get(4);
 
         $var = array(
             'projects' => $projects
         );
-        */
-        self::render('home');
+        self::render('home',$var);
+    }
+
+    static public function about()
+    {
+
+        $page = \PageModel::getContent();
+
+        $var = array(
+            'page' => $page,
+        );
+
+        self::render('about',$var);
     }
 
     static public function render($template,$var = null)

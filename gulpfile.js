@@ -16,6 +16,11 @@ sassDir = './public/sass/';
 compiledDir = './public/compressed/';
 
 jsFiles = [
+    './bower_components/gsap/src/minified/*.min.js',
+    '!./bower_components/gsap/src/minified/jquery.gsap.min.js',
+    'bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+    'bower_components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
+    'bower_components/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
     'bower_components/masonery/dist/masonry.pkgd.min.js',
     jsDir + '**/*.js'
 ];
@@ -76,8 +81,8 @@ gulp.task('watch:js', function () {
     gulp.watch(jsDir + "**/*.js", ['compile:js'])
 })
 
-gulp.task('watch:assets', function() {
-	gulp.start('default');
-	gulp.watch(sassDir + "**/*.scss", ['compile:sass'])
-	gulp.watch(jsDir + "**/*.js", ['compile:js'])
+gulp.task('watch:assets', function () {
+    gulp.start('default');
+    gulp.watch(sassDir + "**/*.scss", ['compile:sass'])
+    gulp.watch(jsDir + "**/*.js", ['compile:js'])
 });

@@ -1,0 +1,48 @@
+#about {
+  left:125px;
+  right:125px;
+  top:0;
+  bottom:0;
+  display:block;
+  width:calc(100% - 250px);
+  margin:auto;
+  z-index:100;
+  padding:300px 0;
+  .page-content {
+    p {
+      font-size:20px;
+      line-height:40px;
+      font-family: $secondFont;
+      font-weight:normal;
+      color:$color-text;
+      padding-left:25px;
+      max-width: 90%;
+      display: block;
+    }
+    blockquote p {
+      color:$color-title;
+      line-height:30px;
+      max-width:70%;
+      padding:0;
+    }
+    h3 {
+      color:$color-subtitle;
+      font-size:30px;
+      line-height:35px;
+      font-weight:normal;
+      margin:25px 0;
+    }
+    h2 {
+      font-size:50px;
+      line-height:60px;
+      color:$color-title;
+      font-weight:normal;
+      margin-top:100px;
+      position:relative;
+      @extend .title-border;
+      &:before {
+        width:30px;
+      }
+    }
+  }
+}
