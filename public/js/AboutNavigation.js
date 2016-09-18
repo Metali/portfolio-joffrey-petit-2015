@@ -9,14 +9,15 @@ app.aboutNavigation = {
         }
     },
     addDot: function(title) {
+
         var textTitle = title.innerHTML;
         textTitle = textTitle.replace('<em>','');
         textTitle = textTitle.replace('</em>','');
 
-        var id
-        document.getElementById('navigation-dots').innerHTML += '<li data-anchor="' + textTitle + '"></li>';
+        var id = 'about-anchor' + textTitle;
+        document.getElementById('navigation-dots').innerHTML += '<li data-anchor="' + id + '"></li>';
 
-
+        return id;
     },
     bindDot: function() {
         var top = {value: 0};
