@@ -1,28 +1,21 @@
 app.aboutNavigation = {
     init: function() {
-        var titles = document.getElementById('about-content').getElementsByTagName('h2');
 
-        var newId = "";
+        var anchors = document.getElementsByClassName('about-anchor');
 
-        for(var i=0; i<titles.length;i++) {
-            newId = app.aboutNavigation.addDot(titles[i]);
+        for(var i=0; i<anchors.length;i++) {
+            var id = anchors[i].id;
+            document.getElementById(id).addEventListener("click", app.aboutNavigation.bindDot);
         }
     },
-    addDot: function(title) {
-
-        var textTitle = title.innerHTML;
-        textTitle = textTitle.replace('<em>','');
-        textTitle = textTitle.replace('</em>','');
-
-        var id = 'about-anchor' + textTitle;
-        document.getElementById('navigation-dots').innerHTML += '<li data-anchor="' + id + '"></li>';
-
-        return id;
-    },
     bindDot: function() {
-        var top = {value: 0};
-        TweenMax.to(top, 2, {
-            value: document.getElementById('projects').offsetTop, // PROJECTS Y
+
+        var doc = document.documentElement;
+
+        id = this.dataset.anchor;
+        var top = {value: (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)};
+        TweenMax.to(top, 1, {
+            value: document.getElementById(id).offsetTop, // PROJECTS Y
             onUpdate: function() {
                 window.scrollTo(0,top.value);
             },
