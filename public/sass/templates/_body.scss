@@ -8,5 +8,6 @@ body {
 
 
 img {
+  opacity:0;
   @include transition-css(opacity);
 }
