@@ -60,66 +60,66 @@
       opacity:1;
     }
   }
+}
+#about-navigation {
+  width: 30px;
+  position: fixed;
+  right: 125px;
+  top:0;
+  bottom:0;
+  margin:auto;
+  z-index:200;
+  display:block;
+  overflow:hidden;
+  transform-origin: 0 0;
+  ul {
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    li {
+      height:30px;
+      width:30px;
+      border-radius:50%;
+      border:8px solid $background;
+      background:$color-title;
+      cursor:pointer;
+      margin-bottom:50px;
+      position:relative;
+      z-index:150;
+      @include transition-css(all);
+      &.active {
+        background: $color-subtitle;
+      }
+      &:after {
+        position:absolute;
+        z-index:105;
+        height:10px;
+        width:10px;
+        content:"";
+        margin:auto;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background: $background;
+        border-radius:50%;
+      }
+    }
+    li:last-of-type {
+      margin-bottom:0;
+    }
+  }
 
-  #about-navigation {
-    width: 30px;
-    position: fixed;
-    right: 125px;
+  #dot-loading {
+    height:0;
+    position:absolute;
+    background:$color-subtitle;
+    width:1px;
+    margin:0 auto;
+    left:0;
+    right:0;
     top:0;
     bottom:0;
-    margin:auto;
-    z-index:200;
-    display:block;
-    overflow:hidden;
-    ul {
-      margin:0;
-      padding:0;
-      list-style-type: none;
-      li {
-        height:30px;
-        width:30px;
-        border-radius:50%;
-        border:8px solid $background;
-        background:$color-title;
-        cursor:pointer;
-        margin-bottom:50px;
-        position:relative;
-        z-index:150;
-        @include transition-css(all);
-        &.active {
-          background: $color-subtitle;
-        }
-        &:after {
-          position:absolute;
-          z-index:105;
-          height:10px;
-          width:10px;
-          content:"";
-          margin:auto;
-          left:0;
-          right:0;
-          top:0;
-          bottom:0;
-          background: $background;
-          border-radius:50%;
-        }
-      }
-      li:last-of-type {
-        margin-bottom:0;
-      }
-    }
-
-    #dot-loading {
-      height:0;
-      position:absolute;
-      background:$color-subtitle;
-      width:1px;
-      margin:0 auto;
-      left:0;
-      right:0;
-      top:0;
-      bottom:0;
-      z-index:100;
-    }
+    z-index:100;
   }
 }
