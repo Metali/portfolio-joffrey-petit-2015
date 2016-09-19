@@ -3,14 +3,14 @@ $paddingOffset: 100px;
   overflow:hidden;
 }
 #last-images-preview {
-  height:80vh;
+  height:calc( 100vh - 200px);
   position:absolute;
-  left:125px;
-  right:125px;
+  left:150px;
+  right:150px;
   top:0;
   bottom:0;
   display:block;
-  width:calc(100% - 250px);
+  width:calc(100% - 300px);
   margin:auto;
   z-index:100;
 

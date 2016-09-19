@@ -254,14 +254,14 @@ img {
   overflow: hidden; }
 
 #last-images-preview {
-  height: 80vh;
+  height: calc( 100vh - 200px);
   position: absolute;
-  left: 125px;
-  right: 125px;
+  left: 150px;
+  right: 150px;
   top: 0;
   bottom: 0;
   display: block;
-  width: calc(100% - 250px);
+  width: calc(100% - 300px);
   margin: auto;
   z-index: 100; }
   #last-images-preview .home-project {
@@ -433,12 +433,11 @@ img {
     #about .page-content h2:before {
       width: 30px; }
   #about #about-cover {
-    width: 100vw;
+    width: 90vw;
     height: 100vh;
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0; }
     #about #about-cover img {
