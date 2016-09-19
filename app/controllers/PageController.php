@@ -54,6 +54,28 @@ class PageController
         self::render('about',$var);
     }
 
+    static public function galery()
+    {
+
+        $projects = \ProjectModel::getAll();
+
+        $var = array(
+            'projects' => $projects
+        );
+        self::render('galery',$var);
+    }
+
+    static public function single()
+    {
+        $page = \PageModel::getContent();
+
+        $var = array(
+            'page' => $page,
+        );
+
+        self::render('single');
+    }
+
     static public function render($template,$var = null)
     {
         if($var) extract($var);

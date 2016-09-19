@@ -34,7 +34,7 @@ app.navbarAnimation = {
     show: function() {
         document.getElementsByTagName('body')[0].style.overflow = 'hidden';
         TweenMax.to("#" + app.navbarAnimation.menu + ' li', 0, {opacity:0})
-        TweenMax.fromTo("#page-content", 1, {x:0,opacity:1, ease: Power4.easeInOut}, {x:'20%',opacity:0,ease: Power4.easeInOut})
+        TweenMax.fromTo("#page-content", 1, {x:0,opacity:1, ease: Power4.easeInOut}, {x:'50%',opacity:0,ease: Power4.easeInOut})
         TweenMax.fromTo("#" + app.navbarAnimation.menu, 1, {left:'-100%', ease: Power4.easeInOut}, {left:0,ease: Power4.easeInOut})
 
         app.navbarAnimation.closeButton.show();
@@ -55,7 +55,7 @@ app.navbarAnimation = {
         );
         setTimeout(function() {
             TweenMax.fromTo("#" + app.navbarAnimation.menu, 1, {left:0,ease: Power4.easeInOut},{left:'-100%', ease: Power4.easeInOut})
-            TweenMax.fromTo("#page-content", 1, {x:'20%',opacity:0,ease: Power4.easeInOut},{x:'0%',opacity:1, ease: Power4.easeInOut})
+            TweenMax.fromTo("#page-content", 1, {x:'50%',opacity:0,ease: Power4.easeInOut},{x:'0%',opacity:1, ease: Power4.easeInOut})
 
             app.navbarAnimation.closeButton.reset();
 

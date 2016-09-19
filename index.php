@@ -5,11 +5,17 @@ require_once('functions.php');
 
 $page = $wp_query->query_vars['pagename'];
 
-if(empty($page)) {
+if(is_home()) {
     PageController::home();
 }
 else if ($page == 'a-propos') {
     PageController::about();
+}
+else if ($page == 'portfolio') {
+    PageController::galery();
+}
+else if (is_single()) {
+    PageController::single();
 }
 
 ?>
