@@ -4,18 +4,38 @@ app.aboutNavigation = {
         var anchors = document.getElementsByClassName('about-anchor');
 
         for(var i=0; i<anchors.length;i++) {
-            var id = anchors[i].id;
-            document.getElementById(id).addEventListener("click", app.aboutNavigation.bindDot);
+
+            if(typeof anchors[i] !== undefined) {
+                var id = anchors[i].id;
+                document.getElementById(id).addEventListener("click", app.aboutNavigation.bindDot);
+            }
+        }
+        this.bindImage();
+
+        var p = document.getElementById('about-content').getElementsByTagName('p');
+
+        for(var x=0; x<p.length;x++) {
+            app.aboutNavigation.bindText(p[x]);
         }
 
-        this.bindImage();
+        var h2 = document.getElementById('about-content').getElementsByTagName('h2');
+
+        for(var y=0; y<h2.length;y++) {
+            app.aboutNavigation.bindText(h2[y]);
+        }
+
+        var h3 = document.getElementById('about-content').getElementsByTagName('h3');
+
+        for(var z=0; z<h3.length;z++) {
+            app.aboutNavigation.bindText(h3[z]);
+        }
     },
     bindDot: function() {
-
         var doc = document.documentElement;
         id = this.dataset.anchor;
         var top = {value: (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)};
-        TweenMax.to(top, 1, {
+
+        TweenMax.to(top, 1.5, {
             value: document.getElementById(id).offsetTop, // PROJECTS Y
             onUpdate: function() {
                 window.scrollTo(0,top.value);
@@ -24,15 +44,16 @@ app.aboutNavigation = {
         });
     },
     bindImage: function() {
-        var height = document.getElementById('about').offsetHeight - window.innerHeight /2;
         var img = TweenMax.fromTo('#about-cover',0.3,{top:'0%'},{top:'10%'});
-        this.scene('about',img,height, window.innerHeight / 2);
-
+        var duration = document.getElementById('about').offsetHeight - window.innerHeight ;
+        this.scene('about',img,duration, window.innerHeight / 2);
     },
-    bindText: function() {
-        var p = TweenMax.fromTo('#about-content p',0.3,{opacity:0},{opacity:1});
-        var height = document.getElementById('about-content').offsetHeight - window.innerHeight /2;
-        this.scene('about-content',img,height, window.innerHeight / 2);
+    bindText: function(el) {
+        var offsetTop = el.offsetTop - (document.getElementById('about-content').offsetTop / 4);
+
+        var p = TweenMax.fromTo(el,0.3,{opacity:0,y:'50px'},{opacity:1,y:0});
+        var duration = window.innerHeight / 10;
+        this.scene('about',p,duration, offsetTop);
     },
     scene: function(triggerElement,tween,duration,offset) {
         offset = offset || 0;
@@ -44,11 +65,46 @@ app.aboutNavigation = {
             offset:offset
         })
             .setTween(tween)
-            .addIndicators()
+            //.addIndicators()
             .addTo(controller)
+    },
+    animeOnScroll: function(e) {
+        var doc = document.documentElement;
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        top += (document.getElementById('about-content').offsetTop /4);
+
+        app.aboutNavigation.animeDot(top);
+        app.aboutNavigation.animeDotLoading(top);
+    },
+    animeDot: function(top)
+    {
+        var percentLoaded = 0;
+        var anchors = document.getElementsByClassName('about-anchor');
+        for(var i=0;i<anchors.length;i++) {
+            var titleId = anchors[i].dataset.anchor;
+            if(document.getElementById(titleId).offsetTop < top) {
+                if(!hasClass(anchors[i],'active')) {
+                    console.log(document.getElementById(titleId).innerHTML + " : " + document.getElementById(titleId).offsetTop);
+                    anchors[i].className += ' active';
+                    document.getElementById(titleId).className += ' active';
+                }
+            } else {
+                removeClass(anchors[i],'active');
+                removeClass(document.getElementById(titleId),'active');
+            }
+
+            document.getElementById('dot-loading').style.height = percentLoaded + '%';
+        }
+    },
+    animeDotLoading: function(top) {
+        var blocHeight = document.getElementById('about-content').offsetHeight - 300;
+        var percentLoaded = ( top  * 100) / blocHeight ;
+
+        document.getElementById('dot-loading').style.height = percentLoaded + '%';
     }
 }
 
 if(divExists('about')) {
     app.aboutNavigation.init();
+    window.addEventListener('scroll', app.aboutNavigation.animeOnScroll);
 }

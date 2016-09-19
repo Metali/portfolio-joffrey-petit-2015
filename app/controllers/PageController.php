@@ -41,7 +41,7 @@ class PageController
             $page["content"] = str_replace($el[$i],'<h2 id="about-title-' . $title . '"><em>' . $contentTitle .'</em></h2>',$page['content']);
             $anchorMenuHeight += 30;
             if($i<(count($el)-1)) {
-                $anchorMenuHeight += 100;
+                $anchorMenuHeight += 50;
             }
         }
 

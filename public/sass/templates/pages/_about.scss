@@ -39,7 +39,7 @@
       margin-top: 100px;
       position: relative;
       @extend .title-border;
-      &:before {
+      .active:before {
         width: 30px;
       }
     }
@@ -51,7 +51,6 @@
     position: fixed;
     z-index: 1;
     top: 0;
-    //left: 0;
     right: 0;
     bottom: 0;
     img {
@@ -71,6 +70,7 @@
     margin:auto;
     z-index:200;
     display:block;
+    overflow:hidden;
     ul {
       margin:0;
       padding:0;
@@ -82,7 +82,7 @@
         border:8px solid $background;
         background:$color-title;
         cursor:pointer;
-        margin-bottom:100px;
+        margin-bottom:50px;
         position:relative;
         z-index:150;
         @include transition-css(all);
@@ -110,7 +110,7 @@
     }
 
     #dot-loading {
-      height:100%;
+      height:0;
       position:absolute;
       background:$color-subtitle;
       width:1px;
