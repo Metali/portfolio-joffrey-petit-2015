@@ -29,3 +29,11 @@ function adjustColor($hex, $steps) {
 function customID($project) {
     return $project['slug'] . '-' . $project['id'];
 }
+
+add_filter( 'get_post_metadata', 'ps_default_disable_links', 10, 4 );
+function ps_default_disable_links( $value, $object_id, $meta_key, $single ) {
+    if( '_promo_slider_disable_links' == $meta_key ) {
+        $value = 'true';
+    }
+    return $value;
+}

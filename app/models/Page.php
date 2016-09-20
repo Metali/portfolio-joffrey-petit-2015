@@ -23,7 +23,13 @@ class PageModel
 
         $formatedPage['content'] = $post->post_content;
         $formatedPage['has_content'] = !empty($post->post_content);
-    
+
+        $formatedPage['next_post'] = [];
+
+        if(get_previous_post()) {
+            $formatedPage['next_post'] = ['title' => get_previous_post()->post_title, 'link' => get_permalink(get_previous_post()->ID)];
+        }
+
         return $formatedPage;
     }
 }

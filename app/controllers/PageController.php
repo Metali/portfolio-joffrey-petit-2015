@@ -73,7 +73,7 @@ class PageController
             'page' => $page,
         );
 
-        self::render('single');
+        self::render('single',$var);
     }
 
     static public function render($template,$var = null)

@@ -137,13 +137,12 @@ input, select {
   display: block;
   z-index: 100; }
 
-.container-center {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0;
-  display: block;
-  position: relative;
-  z-index: 10; }
+.container-center, #last-images-preview, #single-content {
+  left: 125px;
+  right: 125px;
+  top: 125px;
+  bottom: 125px;
+  height: calc( 100vh - 250px); }
 
 .background-full {
   height: 100%;
@@ -158,7 +157,7 @@ input, select {
   left: 0;
   right: 0; }
 
-.title-border:before, #nav-full-menu li a:before, #about .page-content h2:before {
+.title-border:before, #nav-full-menu li a:before, #about .page-content h2:before, #single-container h2:before, #next-post a .album-title:before {
   -ms-transition-property: all;
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -179,7 +178,7 @@ input, select {
   content: "";
   left: 20px; }
 
-.title-border.active:before, #nav-full-menu li a.active:before, #about .page-content h2.active:before {
+.title-border.active:before, #nav-full-menu li a.active:before, #about .page-content h2.active:before, #single-container h2.active:before, #next-post a .active.album-title:before {
   width: 30px; }
 
 body {
@@ -190,7 +189,6 @@ body {
   height: 100vh; }
 
 img {
-  opacity: 0;
   -ms-transition-property: opacity;
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -319,14 +317,9 @@ img {
   overflow: hidden; }
 
 #last-images-preview {
-  height: calc( 100vh - 200px);
   position: absolute;
-  left: 150px;
-  right: 150px;
-  top: 0;
-  bottom: 0;
   display: block;
-  width: calc(100% - 300px);
+  width: calc(100% - 250px);
   margin: auto;
   z-index: 100; }
   #last-images-preview .home-project {
@@ -576,3 +569,69 @@ img {
     top: 0;
     bottom: 0;
     z-index: 100; }
+
+.post #nav {
+  position: fixed; }
+
+#single-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+  #single-container h2 {
+    bottom: 150px;
+    left: 150px;
+    font-size: 40px;
+    line-height: 50px;
+    display: inline-block;
+    position: fixed;
+    font-weight: normal;
+    z-index: 300;
+    font-style: italic; }
+    #single-container h2:before {
+      width: 30px; }
+
+#single-content {
+  position: relative;
+  margin: 0;
+  z-index: 100; }
+  #single-content img {
+    margin-right: 100px;
+    max-height: 100%;
+    min-height: 100%;
+    width: auto;
+    float: left;
+    display: block; }
+
+#next-post {
+  height: 100%;
+  float: left;
+  display: block;
+  width: 400px; }
+  #next-post a {
+    display: inline-block;
+    height: 70px;
+    width: 400px;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    margin: auto; }
+    #next-post a p {
+      color: #485057;
+      font-size: 15px;
+      line-height: 30px;
+      font-family: helvetica, Verdana, arial, sans-serif; }
+    #next-post a .album-title {
+      font-family: "arapeyregular", Georgia, helvetica, arial, sans-serif;
+      color: white;
+      font-size: 40px;
+      font-style: italic;
+      line-height: 40px;
+      position: relative; }
+      #next-post a .album-title:before {
+        width: 30px;
+        right: 0;
+        left: 0;
+        margin: auto; }

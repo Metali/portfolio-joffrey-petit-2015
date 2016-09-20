@@ -11,12 +11,11 @@
 }
 
 .container-center {
-    max-width:1000px;
-    margin:0 auto;
-    padding:0;
-    display:block;
-    position:relative;
-    z-index:10;
+    left:125px;
+    right:125px;
+    top:125px;
+    bottom:125px;
+    height:calc( 100vh - 250px);
 }
 
 %container-middle-absolute {
