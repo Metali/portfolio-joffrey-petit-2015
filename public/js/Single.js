@@ -18,7 +18,7 @@ app.singleNavigation = {
 
             var offsetLeft = singleContentWidth - window.innerWidth;
             var animation = TweenMax.fromTo('#single-content',duration,{left:document.getElementById('single-content').offsetTop + 'px',ease:Linear.ease},{left:'-' + offsetLeft + 'px',ease:Linear.ease});
-            this.scene('single',animation,duration - offset,offset,'#single-content')
+            app.singleNavigation.scene('single',animation,duration - offset,offset,'#single-content')
 
             TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.5);
 
