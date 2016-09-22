@@ -33,3 +33,21 @@ app.responsive = {
         return window.innerWidth <= 649;
     }
 }
+
+function waitForImgThen(callback) {
+
+    allImgLoaded = setInterval(function() {
+        var img = document.getElementsByTagName('img');
+
+        for(var i=0;i<img.length;i++) {
+            if(img[i].complete == true) {
+                imgLoaded+=1;
+            }
+        }
+
+        if(imgLoaded == img.length) {
+            callback();
+            clearInterval(allImgLoaded)
+        }
+    },100);
+}

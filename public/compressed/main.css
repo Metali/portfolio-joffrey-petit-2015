@@ -157,7 +157,7 @@ input, select {
   left: 0;
   right: 0; }
 
-.title-border:before, #nav-full-menu li a:before, #about .page-content h2:before, #single-container h2:before, #next-post a .album-title:before {
+.title-border:before, #nav-full-menu li a:before, #about .page-content h2:before, #single-container h2:before, #next-post a .album-title:before, #galery .galery-project h2:before {
   -ms-transition-property: all;
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -178,7 +178,7 @@ input, select {
   content: "";
   left: 20px; }
 
-.title-border.active:before, #nav-full-menu li a.active:before, #about .page-content h2.active:before, #single-container h2.active:before, #next-post a .active.album-title:before {
+.title-border.active:before, #nav-full-menu li a.active:before, #about .page-content h2.active:before, #single-container h2.active:before, #next-post a .active.album-title:before, #galery .galery-project h2.active:before {
   width: 30px; }
 
 body {
@@ -189,6 +189,7 @@ body {
   height: 100vh; }
 
 img {
+  opacity: 0;
   -ms-transition-property: opacity;
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
@@ -652,3 +653,108 @@ img {
         color: #485057; }
         #next-post a .album-title:hover:before {
           background: #485057; }
+
+#galery #galery-projects {
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 125px;
+  max-width: 1100px;
+  display: block; }
+
+#galery .galery-project {
+  width: 500px;
+  height: auto;
+  display: block;
+  margin-bottom: 100px;
+  -ms-transition-property: all;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-timing-function: easeInEaseOut;
+  -webkit-transition-timing-function: easeInEaseOut;
+  -moz-transition-timing-function: easeInEaseOut;
+  -ms-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  float: left; }
+  #galery .galery-project:nth-of-type(even) {
+    margin-top: 100px; }
+  #galery .galery-project h2 {
+    display: block;
+    color: white;
+    position: absolute;
+    font-size: 40px;
+    left: -10%;
+    bottom: 5%;
+    z-index: 150;
+    opacity: 0;
+    font-weight: normal;
+    font-style: italic;
+    -ms-transition-property: all;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-timing-function: easeInEaseOut;
+    -webkit-transition-timing-function: easeInEaseOut;
+    -moz-transition-timing-function: easeInEaseOut;
+    -ms-transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s; }
+  #galery .galery-project img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+    margin: 0;
+    z-index: 100;
+    filter: grayscale(100%);
+    opacity: 0;
+    -ms-transition-property: all;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-timing-function: easeInEaseOut;
+    -webkit-transition-timing-function: easeInEaseOut;
+    -moz-transition-timing-function: easeInEaseOut;
+    -ms-transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s; }
+  #galery .galery-project:hover img {
+    opacity: 0.8 !important;
+    filter: grayscale(0%); }
+  #galery .galery-project:hover h2 {
+    left: -5%;
+    opacity: 1;
+    -ms-transition-property: all;
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -ms-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -ms-transition-timing-function: easeInEaseOut;
+    -webkit-transition-timing-function: easeInEaseOut;
+    -moz-transition-timing-function: easeInEaseOut;
+    -ms-transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s; }
+    #galery .galery-project:hover h2:before {
+      -ms-transition-property: all;
+      -webkit-transition-property: all;
+      -moz-transition-property: all;
+      -ms-transition-duration: 0.2s;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -ms-transition-timing-function: easeInEaseOut;
+      -webkit-transition-timing-function: easeInEaseOut;
+      -moz-transition-timing-function: easeInEaseOut;
+      -ms-transition-delay: 0.4s;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition-delay: 0.4s;
+      width: 30px; }

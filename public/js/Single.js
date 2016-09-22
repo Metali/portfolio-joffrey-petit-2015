@@ -1,5 +1,10 @@
 app.singleNavigation = {
     init:function() {
+
+        waitForImgThen(function() {
+            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.5);
+        });
+
         var img = document.getElementsByTagName('img');
         var singleContentWidth = 0;
         for(var i=0;i<img.length;i++) {
