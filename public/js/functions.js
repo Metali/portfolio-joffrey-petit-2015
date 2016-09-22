@@ -42,10 +42,12 @@ function waitForImgThen(callback) {
         for(var i=0;i<img.length;i++) {
             if(img[i].complete == true) {
                 imgLoaded+=1;
+                console.log(imgLoaded + " / " + img.length);
             }
         }
 
         if(imgLoaded == img.length) {
+            console.log("all img loaded");
             callback();
             clearInterval(allImgLoaded)
         }

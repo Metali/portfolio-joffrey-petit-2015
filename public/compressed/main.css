@@ -471,11 +471,21 @@ img {
     padding-left: 25px;
     max-width: 90%;
     display: block; }
-  #about .page-content blockquote p {
+  #about .page-content blockquote {
     color: white;
     line-height: 30px;
     max-width: 70%;
-    padding: 0; }
+    padding: 0;
+    font-size: 20px;
+    font-family: helvetica, Verdana, arial, sans-serif;
+    font-weight: normal;
+    padding-left: 25px;
+    display: block; }
+    #about .page-content blockquote p {
+      padding: 0;
+      line-height: 30px;
+      color: white;
+      max-width: 100%; }
   #about .page-content h3 {
     color: #485057;
     font-size: 30px;
