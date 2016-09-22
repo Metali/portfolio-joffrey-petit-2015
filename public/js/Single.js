@@ -11,8 +11,11 @@ app.singleNavigation = {
             }
 
             if(document.getElementById('next-post')) {
-                singleContentWidth += document.getElementById('next-post').offsetWidth + 100;
+                singleContentWidth += document.getElementById('next-post').offsetWidth;
             }
+            
+            singleContentWidth += 100;
+
             document.getElementById('single-content').style.width = singleContentWidth + 'px';
 
 
