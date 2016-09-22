@@ -6,7 +6,7 @@
             <?php if($page['next_post']): ?>
             <div id="next-post">
                 <a href="<?= $page['next_post']['link'] ?>">
-                    <p>Album précédent</p>
+                    <p>Album suivant</p>
                     <p class="album-title"><?= $page['next_post']['title'] ?></p>
                 </a>
             </div>
