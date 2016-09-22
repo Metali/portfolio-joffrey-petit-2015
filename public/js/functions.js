@@ -46,7 +46,7 @@ function waitForImgThen(callback) {
             }
         }
 
-        if(imgLoaded == img.length) {
+        if(imgLoaded >= img.length) {
             console.log("all img loaded");
             callback();
             clearInterval(allImgLoaded)
