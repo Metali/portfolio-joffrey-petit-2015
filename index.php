@@ -11,7 +11,7 @@ if(is_home()) {
 else if ($page == 'a-propos') {
     PageController::about();
 }
-else if ($page == 'portfolio') {
+else if ($page == 'galerie') {
     PageController::galery();
 }
 else if (is_single()) {

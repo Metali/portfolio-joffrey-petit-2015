@@ -2,6 +2,5 @@ bower_components/
 node_modules/
 .idea/
 .DS_STORE
-public/compressed/
-public/assets/compressed/
-
+public/compressed
+public/compressed/*
