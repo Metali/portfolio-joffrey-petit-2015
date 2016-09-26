@@ -60,3 +60,10 @@
     }
   }
 }
+
+@include breakpoint(($tablet, $phone)) {
+  #galery #galery-projects .galery-project {
+    float: none !important;
+    margin: 50px auto !important;
+  }
+}

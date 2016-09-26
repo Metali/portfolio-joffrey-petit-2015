@@ -3,16 +3,6 @@ class PageController
 {
     public function __construct() {}
 
-    static public function home()
-    {
-        $projects = \ProjectModel::get(4);
-
-        $var = array(
-            'projects' => $projects
-        );
-        self::render('home',$var);
-    }
-
     static public function about()
     {
 
@@ -79,6 +69,12 @@ class PageController
     static public function render($template,$var = null)
     {
         if($var) extract($var);
+
+
+        if(defined('AJAX_CALL') && AJAX_CALL) {
+            require_once(TEMPLATES_PATH . $template . '.php');
+            exit();
+        }
 
         require_once(TEMPLATES_PATH . 'partials/header.php');
         require_once(TEMPLATES_PATH . 'partials/navbar.php');

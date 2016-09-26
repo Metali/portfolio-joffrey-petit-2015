@@ -1,51 +1,20 @@
 #nav {
-  height:60px;
-  width:270px;
+  height:0px;
   display:block;
-  position:absolute;
+  position:fixed;
   top:125px;
   left:125px;
+  right:125px;
   z-index:500;
-}
-#nav-menu {
-  height:30px;
-  width:30px;
-  margin-right:30px;
-  margin-top:15px;
-  display:block;
-  float:left;
-  background:none;
-  border:none;
-  outline:none;
-  cursor:pointer;
-  position:relative;
-  &:hover div {
-    background:$color-subtitle;
-  }
-  div {
-    position:absolute;
-    @include transition-css(background);
-    height:2px;
-    background:$color-title;
-    width:30px;
-    overflow:hidden;
-    left:0;
-  }
-  div:nth-of-type(1) {
-    top:7px;
-    bottom:21px;
-  }
-  div:nth-of-type(2) {
-    bottom:7px;
-    top:21px;
+  a {
+    opacity:0;
   }
 }
 
 #logo {
   float:left;
   color:$color-title;
-  margin-left:20px;
-  margin-top:5px;
+  position:relative;
   p {
     font-size:30px;
     line-height:25px;
@@ -56,4 +25,13 @@
     line-height:23px;
     font-style: italic;
   }
+}
+
+#about-navbar {
+  float:right;
+  position:relative;
+  font-size:30px;
+  line-height:25px;
+  font-weight:normal;
+  color: $color-title;
 }

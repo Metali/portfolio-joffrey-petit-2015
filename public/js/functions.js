@@ -20,11 +20,13 @@ function hasClass($el,name) {
 }
 
 function divExists(id) {
+    if(!id) return false;
+
     return document.getElementById(id);
 }
 app.responsive = {
     isDesktop: function() {
-        return window.innerWidth >= 1001;
+        return window.innerWidth >= 1101;
     },
     isTablet: function() {
         return window.innerWidth >= 650 && window.innerWidth <= 1000;
@@ -42,14 +44,13 @@ function waitForImgThen(callback) {
         for(var i=0;i<img.length;i++) {
             if(img[i].complete == true) {
                 imgLoaded+=1;
-                console.log(imgLoaded + " / " + img.length);
             }
         }
 
         if(imgLoaded >= img.length) {
-            console.log("all img loaded");
             callback();
             clearInterval(allImgLoaded)
         }
     },100);
 }
+

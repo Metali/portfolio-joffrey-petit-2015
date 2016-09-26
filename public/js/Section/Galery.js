@@ -1,22 +1,24 @@
-app.galeryInit = {
+app.galery = {
     init: function() {
         waitForImgThen(function() {
-            app.galeryInit.setMasonry();
+            if(app.responsive.isDesktop()) {
+                app.galery.setMasonry();
+            }
+
+            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:0.4},0.5);
 
             var els = document.getElementsByClassName('galery-project');
             for(var i=0;i<els.length;i++) {
-                app.galeryInit.bindImage(els[i]);
+                app.galery.bindImage(els[i]);
             }
         })
     },
     setMasonry: function() {
-        new Masonry( '#galery-projects', {
+        new Masonry('#galery-projects', {
             itemSelector: '.galery-project',
             gutter: 100,
             columnWidth: 500
         });
-
-        TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:0.4},0.5);
     },
 
     bindImage: function(el) {
@@ -30,17 +32,15 @@ app.galeryInit = {
         offset = offset || 0;
 
         var controller = new ScrollMagic.Controller();
-        new ScrollMagic.Scene({
+        var scene = new ScrollMagic.Scene({
             triggerElement: '#' + triggerElement,
             duration: duration,
             offset:offset
         })
             .setTween(tween)
-            //.addIndicators()
             .addTo(controller)
-    },
-}
 
-if(divExists('galery')) {
-    app.galeryInit.init();
+        app.scrollmagic.controllers.push(controller);
+        app.scrollmagic.scenes.push(scene);
+    },
 }
