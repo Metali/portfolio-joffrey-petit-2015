@@ -2,7 +2,10 @@ loading = {}, endLoading = false;
 
 app.loader = {
     init:function() {
-        this.start();
+
+        app.loader.$loaderDOM.show(
+           app.loader.start()
+        )
     },
     start: function(data,link) {
         endLoading = false;
@@ -14,13 +17,16 @@ app.loader = {
         link = link.replace(window.location.origin,'');
         window.history.pushState(null, '', link);
 
-        if(typeof data != 'undefined') {
-            document.getElementById('page-content').innerHTML = data.response;
-        }
-        app.loader.bindSection();
+        setTimeout(function() {
 
-        app.loader.preload(function() {
-        })
+            if(typeof data != 'undefined') {
+                document.getElementById('page-content').innerHTML = data.response;
+            }
+
+            app.loader.bindSection();
+        },500);
+
+        app.loader.preload(function() {})
     },
     preload: function(callback) {
 
@@ -59,34 +65,37 @@ app.loader = {
     },
     $loaderDOM: {
         show: function(callback) {
+
             document.getElementById('loader').style.zIndex = 600;
 
-            var timeline = new TimelineMax({repeat:0,onComplete:function() {
+            var t = new TimelineMax({repeat:0,onComplete:function() {
+                document.getElementById('loader').className += ' active';
                 if(typeof callback == 'function') {
                     callback();
                 }
                 window.scrollTo(0,0);
             }})
-
-            timeline
+                t
                 .to('#loading-bar .loading-updating',0,{width:'0'})
                 .to('#page-content',0.3,{opacity:0})
-                .staggerFromTo('#nav a',0.3,{opacity:1},{opacity:0},0.3)
-                .fromTo('#loader',0.3,{opacity:0},{opacity:1})
+                .staggerTo('#nav a',0.3,{opacity:0},0.3)
+                // .fromTo('#loader',0.3,{opacity:0},{opacity:1})
 
         },
         hide: function(callback) {
-            var timeline = new TimelineMax({repeat:0, onComplete: function() {
-                document.getElementById('loader').style.zIndex = 0;
 
+            var t = new TimelineMax({repeat:0, onComplete: function() {
+                document.getElementById('loader').style.zIndex = 0;
                 if (typeof callback == 'function') {
                     callback();
                 }
-            }});
+            }})
 
-            timeline
-                .fromTo('#loader',0.3,{opacity:1},{opacity:0})
-                .staggerFromTo('#nav a',0.3,{opacity:0},{opacity:1},0.3)
+                removeClass(document.getElementById('loader'),'active');
+
+                t
+                // .fromTo('#loader',0.3,{opacity:1},{opacity:0})
+                .staggerTo('#nav a',0.3,{opacity:1},0.3)
                 .to('#page-content',0.3,{opacity:1})
         }
     },
