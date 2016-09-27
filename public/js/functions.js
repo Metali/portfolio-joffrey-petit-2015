@@ -37,19 +37,20 @@ app.responsive = {
 }
 
 function waitForImgThen(callback) {
-
     allImgLoaded = setInterval(function() {
         var img = document.getElementsByTagName('img');
 
         for(var i=0;i<img.length;i++) {
-            if(img[i].complete == true) {
+
+            if(img[i].complete == true && imgLoadedArray.indexOf(img[i]) == -1) {
                 imgLoaded+=1;
+                imgLoadedArray.push(img[i]);
             }
         }
 
-        if(imgLoaded >= img.length) {
-            callback();
+        if(imgLoadedArray.length >= img.length) {
             clearInterval(allImgLoaded)
+            callback();
         }
     },100);
 }

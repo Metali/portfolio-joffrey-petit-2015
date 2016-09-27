@@ -1,8 +1,6 @@
 app.single = {
     init:function() {
 
-        waitForImgThen(function() {
-
             var img = document.getElementsByTagName('img');
             var singleContentWidth = 0;
             for(var i=0;i<img.length;i++) {
@@ -28,9 +26,8 @@ app.single = {
 
             app.single.scene('single',animation,duration - offset,offset,'#single-content')
 
-            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.5);
+            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.2);
 
-        });
     },
     scene: function(triggerElement,tween,duration,offset,pin) {
         offset = offset || 0;

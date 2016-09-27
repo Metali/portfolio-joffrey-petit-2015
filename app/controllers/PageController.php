@@ -59,6 +59,27 @@ class PageController
     {
         $page = \PageModel::getContent();
 
+//            foreach($page['medias'] as $p => $media) {
+//                print_r(wp_get_attachment_metadata($media->ID));
+//            }
+//            die;
+//        $pattern = '/src="([^"]*)"/';
+//        preg_match_all($pattern, $page['content'], $matches,PREG_PATTERN_ORDER);
+//
+//        $totalWidth = 0;
+//        $img = $matches[1];
+//
+//
+//        for($i=0;$i<count($img);$i++) {
+//
+//            list($width, $height, $type, $attr) = getimagesize($img[$i]))
+//
+//            $totalWidth = $totalWidth + $width;
+//
+//        }
+//
+//        print_r($totalWidth);die;
+
         $var = array(
             'page' => $page,
         );

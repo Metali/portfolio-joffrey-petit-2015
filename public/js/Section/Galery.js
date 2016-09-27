@@ -1,17 +1,15 @@
 app.galery = {
     init: function() {
-        waitForImgThen(function() {
-            if(app.responsive.isDesktop()) {
-                app.galery.setMasonry();
-            }
+        if(app.responsive.isDesktop()) {
+            app.galery.setMasonry();
+        }
 
-            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:0.4},0.5);
+        TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:0.4},0.5);
 
-            var els = document.getElementsByClassName('galery-project');
-            for(var i=0;i<els.length;i++) {
-                app.galery.bindImage(els[i]);
-            }
-        })
+        var els = document.getElementsByClassName('galery-project');
+        for(var i=0;i<els.length;i++) {
+            app.galery.bindImage(els[i]);
+        }
     },
     setMasonry: function() {
         new Masonry('#galery-projects', {

@@ -15,7 +15,7 @@
     <title><?= get_bloginfo('name'); ?></title>
     <meta name="description" content="<?= get_bloginfo('description'); ?>">
     <?php //do_action('wp_head'); ?>
-    <script>app={};imgLoaded=0;</script>
+    <script>app={};imgLoaded=0;imgLoadedArray=[]</script>
 </head>
 <?php
     $class = '';

@@ -26,6 +26,8 @@ class PageModel
 
         $formatedPage['next_post'] = [];
 
+        //$formatedPage['medias'] = get_attached_media( '', $post->ID );
+
         if(get_previous_post()) {
             $formatedPage['next_post'] = ['title' => get_previous_post()->post_title, 'link' => get_permalink(get_previous_post()->ID)];
         }
