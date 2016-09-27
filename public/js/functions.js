@@ -20,11 +20,13 @@ function hasClass($el,name) {
 }
 
 function divExists(id) {
+    if(!id) return false;
+
     return document.getElementById(id);
 }
 app.responsive = {
     isDesktop: function() {
-        return window.innerWidth >= 1001;
+        return window.innerWidth >= 1101;
     },
     isTablet: function() {
         return window.innerWidth >= 650 && window.innerWidth <= 1000;
@@ -35,21 +37,21 @@ app.responsive = {
 }
 
 function waitForImgThen(callback) {
-
     allImgLoaded = setInterval(function() {
         var img = document.getElementsByTagName('img');
 
         for(var i=0;i<img.length;i++) {
-            if(img[i].complete == true) {
+
+            if(img[i].complete == true && imgLoadedArray.indexOf(img[i]) == -1) {
                 imgLoaded+=1;
-                console.log(imgLoaded + " / " + img.length);
+                imgLoadedArray.push(img[i]);
             }
         }
 
-        if(imgLoaded >= img.length) {
-            console.log("all img loaded");
-            callback();
+        if(imgLoadedArray.length >= img.length) {
             clearInterval(allImgLoaded)
+            callback();
         }
     },100);
 }
+

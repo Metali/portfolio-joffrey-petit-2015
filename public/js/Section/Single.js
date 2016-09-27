@@ -1,13 +1,10 @@
-app.singleNavigation = {
+app.single = {
     init:function() {
-
-        waitForImgThen(function() {
 
             var img = document.getElementsByTagName('img');
             var singleContentWidth = 0;
             for(var i=0;i<img.length;i++) {
                 singleContentWidth += img[i].offsetWidth + 100;
-
             }
 
             if(document.getElementById('next-post')) {
@@ -20,32 +17,32 @@ app.singleNavigation = {
 
 
             var offset = window.innerHeight / 2;
-            var duration = singleContentWidth ;
+            var duration = singleContentWidth;
 
             var offsetLeft = singleContentWidth - window.innerWidth;
-            var animation = TweenMax.fromTo('#single-content',duration,{left:document.getElementById('single-content').offsetTop + 'px',ease:Linear.ease},{left:'-' + offsetLeft + 'px',ease:Linear.ease});
-            app.singleNavigation.scene('single',animation,duration - offset,offset,'#single-content')
+            var animation = TweenMax.fromTo('#single-content',duration,
+                {left:document.getElementById('single-content').offsetTop + 'px',ease:Linear.ease},
+                {left:'-' + offsetLeft + 'px',ease:Linear.ease});
 
-            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.5);
+            app.single.scene('single',animation,duration - offset,offset,'#single-content')
 
-        });
+            TweenMax.staggerFromTo('img',0.2,{opacity:0},{opacity:1},0.2);
+
     },
     scene: function(triggerElement,tween,duration,offset,pin) {
         offset = offset || 0;
 
         var controller = new ScrollMagic.Controller();
-        new ScrollMagic.Scene({
+        var scene = new ScrollMagic.Scene({
             triggerElement: '#' + triggerElement,
             duration: duration,
             offset:offset
         })
             .setTween(tween)
             .setPin(pin)
-            //.addIndicators()
             .addTo(controller)
-    },
-}
 
-if(divExists('single')) {
-    app.singleNavigation.init();
+        app.scrollmagic.controllers.push(controller);
+        app.scrollmagic.scenes.push(scene);
+    },
 }

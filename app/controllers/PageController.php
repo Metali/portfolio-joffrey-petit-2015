@@ -3,16 +3,6 @@ class PageController
 {
     public function __construct() {}
 
-    static public function home()
-    {
-        $projects = \ProjectModel::get(4);
-
-        $var = array(
-            'projects' => $projects
-        );
-        self::render('home',$var);
-    }
-
     static public function about()
     {
 
@@ -69,6 +59,27 @@ class PageController
     {
         $page = \PageModel::getContent();
 
+//            foreach($page['medias'] as $p => $media) {
+//                print_r(wp_get_attachment_metadata($media->ID));
+//            }
+//            die;
+//        $pattern = '/src="([^"]*)"/';
+//        preg_match_all($pattern, $page['content'], $matches,PREG_PATTERN_ORDER);
+//
+//        $totalWidth = 0;
+//        $img = $matches[1];
+//
+//
+//        for($i=0;$i<count($img);$i++) {
+//
+//            list($width, $height, $type, $attr) = getimagesize($img[$i]))
+//
+//            $totalWidth = $totalWidth + $width;
+//
+//        }
+//
+//        print_r($totalWidth);die;
+
         $var = array(
             'page' => $page,
         );
@@ -79,6 +90,12 @@ class PageController
     static public function render($template,$var = null)
     {
         if($var) extract($var);
+
+
+        if(defined('AJAX_CALL') && AJAX_CALL) {
+            require_once(TEMPLATES_PATH . $template . '.php');
+            exit();
+        }
 
         require_once(TEMPLATES_PATH . 'partials/header.php');
         require_once(TEMPLATES_PATH . 'partials/navbar.php');
