@@ -8,6 +8,10 @@
   z-index:500;
   a {
     opacity:0;
+    @include transition-css(color);
+    &:hover {
+      color:$color-yellow;
+    }
   }
 }
 
