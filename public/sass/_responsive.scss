@@ -1,0 +1,120 @@
+
+@include breakpoint(($tablet, $phone)) {
+  #galery #galery-projects .galery-project {
+    float: none !important;
+    margin: 50px auto !important;
+    max-width:90%;
+    margin:0 auto;
+
+  }
+  #galery #galery-projects {
+    h2, img {
+      opacity:1 !important;
+      filter:none;
+    }
+    h2 {
+      left:0 !important;
+      position:relative;
+      font-size:25px;
+      line-height:35px;
+      margin-bottom:10px;
+    }
+  }
+  .container-center, #last-images-preview, #single-content {
+    left:0;
+    right:0;
+    height:auto;
+    overflow: none;
+    top:0;
+  }
+  #single-container h2 {
+    position: relative;
+    left: 0;
+    text-align: center;
+    bottom:0;
+    display:block;
+    margin:50px 0;
+    margin-top:100px;
+    &:before {
+      display:none;
+    }
+  }
+
+  #nav {
+    left:20px;
+    right:20px;
+    top:20px;
+  }
+  #logo span {
+    font-size: 14px;
+    line-height: 17px;
+    font-style: italic;
+  }
+  #about-navbar {
+    font-size: 20px;
+    line-height: 35px;
+  }
+  #logo p {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: normal;
+  }
+  #single-content img {
+    opacity: 1;
+    clear: both !important;
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto !important;
+    position: relative;
+    float: none;
+    margin-bottom: 25Px;
+  }
+  #next-post {
+    clear: both !important;
+    height: auto;
+    display: block;
+  }
+  #next-post a {
+    display: block;
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    top: auto;
+    bottom: auto;
+    position: relative;
+    margin: 25Px auto;
+    margin-top:50px;
+  }
+  #about {
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+    z-index: 100;
+    padding: 0;
+    position: relative;
+}
+#about .page-content blockquote {
+  max-width:100%;
+  .p1::before {
+    content:"";
+  }
+}
+#about-navigation {
+  display:none;
+}
+#about .page-content p::before {
+    content: "— ";
+    padding-left: 0;
+}
+#loader #loading-text p {
+    line-height:30px;
+    font-size:30px;
+}
+#loader #loading-text p:nth-of-type(2) {
+  line-height:25px;
+  font-size:15px;
+}
+}
